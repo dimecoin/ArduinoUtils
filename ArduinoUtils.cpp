@@ -34,3 +34,19 @@ double getTemperature(int8_t delayTime) {
 	// The returned temperature is in degrees Celsius.
 	return (t);
 }
+
+
+String getBitString(uint8_t in) {
+
+	String bitString = "";
+	for(byte mask = 0x80; mask; mask >>= 1){
+		if(mask  & in) {
+			bitString += '1';
+		} else {
+			bitString += '0';
+		}
+	}
+
+return (bitString);
+
+}

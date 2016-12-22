@@ -10,4 +10,12 @@
  */
 double getTemperature(int8_t delayTime);
 
+/**
+ * Takes a byte and gives you a nice (padded) string of binary to make printing binary pretty.
+ * Partailly taken from : http://forum.arduino.cc/index.php?topic=46320.msg335376#msg335376
+ */
+String getBitString(uint8_t byte);
+
+
+
 #endif
