@@ -18,7 +18,7 @@ double getTemperature(int8_t delayTime) {
 	ADMUX = (_BV(REFS1) | _BV(REFS0) | _BV(MUX3));
 	ADCSRA |= _BV(ADEN);	// enable the ADC
 
-	delay(delayTime);		// wait for voltages to become stable.
+	delay(delayTime);	// wait for voltages to become stable.
 
 	ADCSRA |= _BV(ADSC);	// Start the ADC
 
@@ -35,18 +35,29 @@ double getTemperature(int8_t delayTime) {
 	return (t);
 }
 
-
 String getBitString(uint8_t in) {
 
 	String bitString = "";
-	for(byte mask = 0x80; mask; mask >>= 1){
-		if(mask  & in) {
+	for (byte mask = 0x80; mask; mask >>= 1) {
+		if (mask & in) {
 			bitString += '1';
 		} else {
 			bitString += '0';
 		}
 	}
 
-return (bitString);
+	return (bitString);
 
+}
+
+void clearSerialConsole(bool flush) {
+
+	Serial.write(27);	// ESC command
+	Serial.print("[2J");	// clear screen command
+	Serial.write(27);
+	Serial.print("[H");	// cursor to home command
+
+	if (flush) {
+		Serial.flush();
+	}
 }

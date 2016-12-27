@@ -19,6 +19,11 @@ double getTemperature(int8_t delayTime);
  */
 String getBitString(uint8_t byte);
 
+/** Clears serial console screen 
+ * optionally, force a flush()
+ * Source: http://stackoverflow.com/a/15559322
+ **/
 
+void clearSerialConsole(bool flush);
 
 #endif
