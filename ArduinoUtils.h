@@ -2,6 +2,9 @@
 #define ARDUINO_UTILS_H
 
 #include <Arduino.h>
+#include <Wire.h>
+
+
 /** Gets the internal temp of the MPU.
  * We have to wait for readings (voltage) to stablize.  If you get bad values, try increasing delay
  * delay = -1 : use default of 6 ms, this is typically fastest you can query.
@@ -25,5 +28,13 @@ String getBitString(uint8_t byte);
  **/
 
 void clearSerialConsole(bool flush);
+
+/**
+ * Scans for I2C devices and prints to serial console.
+ * Assumes you have a working Serial setup.
+ * source: https://arduino-info.wikispaces.com/LCD-Blue-I2C
+ */
+
+void scanI2CDevices(void);
 
 #endif
