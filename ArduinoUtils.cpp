@@ -85,3 +85,8 @@ void scanI2CDevices(void) {
 	Serial.print(count, DEC);
 	Serial.println(" device(s).");
 }
+
+
+void softReset(void) {
+	asm volatile("jmp 0");
+}

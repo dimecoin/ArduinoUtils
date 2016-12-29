@@ -37,4 +37,11 @@ void clearSerialConsole(bool flush);
 
 void scanI2CDevices(void);
 
+/** does a software reset.
+ * source: http://forum.arduino.cc/index.php?topic=49581.msg354263#msg354263
+ *
+ */
+void softReset(void);
+
+
 #endif
