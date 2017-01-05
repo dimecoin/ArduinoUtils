@@ -1,0 +1,22 @@
+#######################################
+# ArduinoUtils (helper functions for the arduino)
+####################################### 
+# Class
+#######################################
+
+#######################################
+# Methods and Functions 
+#######################################	
+
+getTemperature KEYWORD2
+getBitString KEYWORD2
+clearSerialConsole KEYWORD2
+scanI2CDevices KEYWORD2
+softReset KEYWORD2
+
+#######################################
+# Constants
+#######################################
+ 
+
+
